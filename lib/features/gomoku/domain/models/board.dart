@@ -3,10 +3,11 @@ import 'player.dart';
 const int kBoardSize = 15;
 
 class Board {
-  Board() : _cells = List.generate(kBoardSize, (_) => List.filled(kBoardSize, null));
+  Board()
+      : _cells =
+            List.generate(kBoardSize, (_) => List.filled(kBoardSize, null));
 
-  Board._fromCells(List<List<Player?>> cells)
-      : _cells = cells;
+  Board._fromCells(List<List<Player?>> cells) : _cells = cells;
 
   final List<List<Player?>> _cells;
 

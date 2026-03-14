@@ -65,7 +65,8 @@ class BoardPainter extends CustomPainter {
         if (player == null) continue;
 
         final center = Offset((c + 0.5) * cellSize, (r + 0.5) * cellSize);
-        final isLast = lastMove != null && lastMove!.$1 == r && lastMove!.$2 == c;
+        final isLast =
+            lastMove != null && lastMove!.$1 == r && lastMove!.$2 == c;
 
         _drawStone(canvas, center, stoneRadius, player, isLast);
       }
@@ -96,8 +97,7 @@ class BoardPainter extends CustomPainter {
           : [Colors.white, Colors.grey.shade300],
     );
     final rect = Rect.fromCircle(center: center, radius: radius);
-    final stonePaint = Paint()
-      ..shader = gradient.createShader(rect);
+    final stonePaint = Paint()..shader = gradient.createShader(rect);
     canvas.drawCircle(center, radius, stonePaint);
 
     // Last move marker

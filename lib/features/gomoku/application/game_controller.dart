@@ -26,7 +26,10 @@ class GameController extends Notifier<GameState> {
 
     final newBoard = s.board.placeStone(row, col, Player.black);
     final newStatus = GameRules.evaluate(newBoard, row, col, Player.black);
-    final newHistory = [...s.moveHistory, Move(row: row, col: col, player: Player.black)];
+    final newHistory = [
+      ...s.moveHistory,
+      Move(row: row, col: col, player: Player.black)
+    ];
 
     state = s.copyWith(
       board: newBoard,
@@ -53,7 +56,10 @@ class GameController extends Notifier<GameState> {
     final (row, col) = _ai.chooseMove(s.board);
     final newBoard = s.board.placeStone(row, col, Player.white);
     final newStatus = GameRules.evaluate(newBoard, row, col, Player.white);
-    final newHistory = [...s.moveHistory, Move(row: row, col: col, player: Player.white)];
+    final newHistory = [
+      ...s.moveHistory,
+      Move(row: row, col: col, player: Player.white)
+    ];
 
     state = s.copyWith(
       board: newBoard,

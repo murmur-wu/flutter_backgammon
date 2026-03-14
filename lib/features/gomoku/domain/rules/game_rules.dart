@@ -10,9 +10,9 @@ class GameRules {
   /// Check if placing at (row, col) causes [player] to win.
   static bool isWinningMove(Board board, int row, int col, Player player) {
     const directions = [
-      [0, 1],  // horizontal
-      [1, 0],  // vertical
-      [1, 1],  // diagonal
+      [0, 1], // horizontal
+      [1, 0], // vertical
+      [1, 1], // diagonal
       [1, -1], // anti-diagonal
     ];
 

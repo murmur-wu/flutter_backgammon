@@ -61,11 +61,22 @@ class _RulesCard extends StatelessWidget {
           children: [
             Text('How to Play', style: theme.textTheme.headlineMedium),
             const SizedBox(height: 8),
-            const _RuleItem(icon: Icons.circle, color: Colors.black, text: 'You play Black stones'),
-            const _RuleItem(icon: Icons.circle, color: Colors.white70, text: 'Computer plays White stones'),
-            const _RuleItem(icon: Icons.grid_on, text: 'Tap any empty intersection to place'),
-            const _RuleItem(icon: Icons.emoji_events, text: 'First to get 5 in a row wins'),
-            const _RuleItem(icon: Icons.swap_horiz, text: 'Horizontal, vertical & diagonal all count'),
+            const _RuleItem(
+                icon: Icons.circle,
+                color: Colors.black,
+                text: 'You play Black stones'),
+            const _RuleItem(
+                icon: Icons.circle,
+                color: Colors.white70,
+                text: 'Computer plays White stones'),
+            const _RuleItem(
+                icon: Icons.grid_on,
+                text: 'Tap any empty intersection to place'),
+            const _RuleItem(
+                icon: Icons.emoji_events, text: 'First to get 5 in a row wins'),
+            const _RuleItem(
+                icon: Icons.swap_horiz,
+                text: 'Horizontal, vertical & diagonal all count'),
           ],
         ),
       ),
@@ -87,7 +98,9 @@ class _RuleItem extends StatelessWidget {
       child: Row(
         children: [
           if (icon != null)
-            Icon(icon, size: 16, color: color ?? Theme.of(context).colorScheme.primary),
+            Icon(icon,
+                size: 16,
+                color: color ?? Theme.of(context).colorScheme.primary),
           const SizedBox(width: 8),
           Expanded(child: Text(text)),
         ],
