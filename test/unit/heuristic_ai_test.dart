@@ -7,14 +7,14 @@ import 'package:gomoku/features/gomoku/data/ai/candidate_generator.dart';
 void main() {
   group('CandidateGenerator', () {
     test('returns center when board is empty', () {
-      final gen = CandidateGenerator();
+      const gen = CandidateGenerator();
       final board = Board();
       final candidates = gen.generate(board);
       expect(candidates, contains((kBoardSize ~/ 2, kBoardSize ~/ 2)));
     });
 
     test('returns positions near placed stones', () {
-      final gen = CandidateGenerator(radius: 1);
+      const gen = CandidateGenerator(radius: 1);
       var board = Board();
       board = board.placeStone(7, 7, Player.black);
       final candidates = gen.generate(board);
@@ -26,7 +26,7 @@ void main() {
 
   group('HeuristicAI', () {
     test('takes winning move immediately', () {
-      final ai = HeuristicAI();
+      const ai = HeuristicAI();
       var board = Board();
       // 4 white stones in a row
       for (int c = 0; c < 4; c++) {
@@ -39,7 +39,7 @@ void main() {
     });
 
     test('blocks player from winning', () {
-      final ai = HeuristicAI();
+      const ai = HeuristicAI();
       var board = Board();
       // 4 black stones in a row
       for (int c = 0; c < 4; c++) {
@@ -54,7 +54,7 @@ void main() {
     });
 
     test('returns valid move for empty-ish board', () {
-      final ai = HeuristicAI();
+      const ai = HeuristicAI();
       var board = Board();
       board = board.placeStone(7, 7, Player.black);
       final (row, col) = ai.chooseMove(board);

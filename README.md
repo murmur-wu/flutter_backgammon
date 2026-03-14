@@ -80,7 +80,7 @@ flutter pub get
 
 ```bash
 # Install pod dependencies first
-cd ios && pod install && cd ..
+cd ios && pod install && cd ..ç
 
 # Run on iOS simulator
 open -a Simulator

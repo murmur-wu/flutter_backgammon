@@ -1,7 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gomoku/features/gomoku/domain/models/board.dart';
 import 'package:gomoku/features/gomoku/domain/models/player.dart';
-import 'package:gomoku/features/gomoku/domain/models/game_status.dart';
 import 'package:gomoku/features/gomoku/domain/rules/game_rules.dart';
 
 void main() {

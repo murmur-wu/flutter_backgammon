@@ -84,7 +84,7 @@ class BoardPainter extends CustomPainter {
 
     // Shadow
     final shadowPaint = Paint()
-      ..color = Colors.black.withOpacity(0.3)
+      ..color = Colors.black.withValues(alpha: 0.3)
       ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 3);
     canvas.drawCircle(center + const Offset(1.5, 1.5), radius, shadowPaint);
 
