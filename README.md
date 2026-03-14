@@ -4,10 +4,16 @@ A production-ready Flutter mobile application for the classic Gomoku (Five-in-a-
 
 ## Supported Platforms
 
-- ✅ iOS
+- ✅ iOS (iOS 13+ · fully compatible with iOS 26)
 - ✅ Android
 - ❌ Web (not supported)
 - ❌ Desktop (not supported)
+
+### iOS 26 Compatibility
+
+This project targets the latest Flutter stable channel (≥ 3.38), which is required for iOS 26 / Xcode 26 compatibility and App Store submission from April 2026 onward. The minimum iOS deployment target is **iOS 13**.
+
+> From April 28, 2026, Apple requires all App Store submissions to be built with Xcode 26 and the iOS 26 SDK. Flutter 3.38+ provides full support for this requirement.
 
 ## Architecture Overview
 
@@ -51,6 +57,12 @@ The computer AI uses a heuristic evaluation approach:
 2. **Block opponent** — if the player is about to win, block it
 3. **Score positions** — evaluate patterns (open threes, fours, etc.)
 
+## Prerequisites
+
+- **Flutter** latest stable (≥ 3.38 for iOS 26 / Xcode 26 support) — [install Flutter](https://docs.flutter.dev/get-started/install)
+- **Xcode 26+** (for iOS 26 builds)
+- **Android Studio** or any IDE with Flutter plugin
+
 ## Installation
 
 ```bash
@@ -64,9 +76,13 @@ flutter pub get
 
 ## Running
 
-### iOS Simulator
+### iOS Simulator (including iOS 26)
 
 ```bash
+# Install pod dependencies first
+cd ios && pod install && cd ..
+
+# Run on iOS simulator
 open -a Simulator
 flutter run -d ios
 ```
