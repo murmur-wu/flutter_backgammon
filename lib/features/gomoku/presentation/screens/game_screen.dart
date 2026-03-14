@@ -25,10 +25,9 @@ class GameScreen extends StatelessWidget {
             children: [
               StatusBar(),
               SizedBox(height: 12),
-              GomokuBoard(),
+              Expanded(child: GomokuBoard()),
               SizedBox(height: 12),
               ResultBanner(),
-              Spacer(),
               ControlPanel(),
               SizedBox(height: 8),
             ],
