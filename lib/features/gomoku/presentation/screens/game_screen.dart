@@ -18,19 +18,19 @@ class GameScreen extends StatelessWidget {
           onPressed: () => context.go('/'),
         ),
       ),
-      body: SafeArea(
+      body: const SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0),
           child: Column(
             children: [
-              const StatusBar(),
-              const SizedBox(height: 12),
-              const GomokuBoard(),
-              const SizedBox(height: 12),
-              const ResultBanner(),
-              const Spacer(),
-              const ControlPanel(),
-              const SizedBox(height: 8),
+              StatusBar(),
+              SizedBox(height: 12),
+              GomokuBoard(),
+              SizedBox(height: 12),
+              ResultBanner(),
+              Spacer(),
+              ControlPanel(),
+              SizedBox(height: 8),
             ],
           ),
         ),
