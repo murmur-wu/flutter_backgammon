@@ -20,27 +20,25 @@ class GomokuBoard extends ConsumerWidget {
 
     return AspectRatio(
       aspectRatio: 1.0,
-      child: GestureDetector(
-        onTapUp: gameState.canAcceptInput
-            ? (details) => _onTap(details, context, controller)
-            : null,
-        child: CustomPaint(
-          painter: BoardPainter(board: gameState.board, lastMove: lastMove),
-        ),
+      child: LayoutBuilder(
+        builder: (_, constraints) {
+          final cellSize = constraints.maxWidth / kBoardSize;
+          return GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTapUp: gameState.canAcceptInput
+                ? (details) {
+                    final col = (details.localPosition.dx / cellSize).floor();
+                    final row = (details.localPosition.dy / cellSize).floor();
+                    controller.placeStone(row, col);
+                  }
+                : null,
+            child: CustomPaint(
+              painter: BoardPainter(board: gameState.board, lastMove: lastMove),
+              child: const SizedBox.expand(),
+            ),
+          );
+        },
       ),
     );
-  }
-
-  void _onTap(TapUpDetails details, BuildContext context, GameController controller) {
-    final box = context.findRenderObject() as RenderBox?;
-    if (box == null) return;
-
-    final localPos = box.globalToLocal(details.globalPosition);
-    final cellSize = box.size.width / kBoardSize;
-
-    final col = (localPos.dx / cellSize).floor();
-    final row = (localPos.dy / cellSize).floor();
-
-    controller.placeStone(row, col);
   }
 }
